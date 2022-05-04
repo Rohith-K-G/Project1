@@ -46,9 +46,7 @@
 	  	      $(document).ready(function(){
 				  $("span").siblings("span.side").css({"float":"right","margin-right":"4%"});
 				})
-	  	       $(document).ready(function(){
-				  $("span").childern().css({"color":"red"});
-				})
+	  	       
 	  	       $(document).ready(function(){
 				  $("div").find("h5.hd1").css({"margin-bottom":"8%"});
 				})
@@ -169,9 +167,29 @@
 			#date_pg,#Time_pg{
 				text-align: left;
 			}
+			div#full{
+				width: 99%;
+				display: none;
+			}
+			#btn1{
+				float: left;
+				margin-left: 48%;
+			}
+			.can,.subt,button{
+				position: relative;
+				margin-top: 40%;
+				padding: 0.3% 0.5%;
+			}
+			.can{
+				float: left;
+			}
+			.subt{
+				float: right;	
+			}
 		</style>
 	</head>
 	<body>
+		<div id="full">
 		<div class="cl1">
 			<h5 class="hd1">EMS Notes</h5> 
 			<span class="first">Presenting Complaints:</span><br>
@@ -277,6 +295,7 @@
 			</form>
 			<h5 class="hd4 Urgent">Urgent</h5>
 			<form>
+
 				<input type="checkbox" name="Haemorrhage_controlled" value="Haemorrhage-controlled_Urgent" id="UrgentQ1"><label>Haemorrhage-controlled</label><br> 
 
 				<input type="checkbox" name="DislocationOfFinger" value="DislocationOfFinger_Urgent" id="UrgentQ2"><label>Dislocation of finger or toe</label><br>
@@ -308,24 +327,30 @@
 			<form>
 				<span>Recorded At: 
 				<label for="date_pg">Date</label><input type="text" name="Date" id="date_pg" class="date"></input>
+
 				<label for="Time_pg">Time</label><input type="text" name="Time" id="Time_pg"><br></span>
-				<label for="Pluse_pg">Pluse</label><input type="text" name="Pluse" id="Pluse_pg" class="main" value="200"><span class="side">3</span><br>
-				<label for="sBP_pg">s BP</label><input type="text" name="sBP" id="sBP_pg" class="main" value="100"><span class="side">1</span><br>
-				<label for="dBP_pg">d BP</label><input type="text" name="dBP" id="dBP_pg" class="main" value="98"><br>
-				<label for="RR_pg">RR</label><input type="text" name="RR" id="RR_pg" class="main" value="78"><span class="side">3</span><br>
-				<label for="O2_Sat_pg">O2 Sat:</label><input type="text" name="O2_Sat" id="O2_Sat_pg" class="main" value="24"><br>
+
+				<label for="Pluse_pg">Pluse</label><input type="text" name="Pluse" id="Vitals_Q1" class="main" value="200"><span class="side">3</span><br>
+
+				<label for="sBP_pg">s BP</label><input type="text" name="sBP" id="Vitals_Q2" class="main" value="100"><span class="side">1</span><br>
+
+				<label for="dBP_pg">d BP</label><input type="text" name="dBP" id="Vitals_Q3" class="main" value="98"><br>
+
+				<label for="RR_pg">RR</label><input type="text" name="RR" id="Vitals_Q4" class="main" value="78"><span class="side">3</span><br>
+
+				<label for="O2_Sat_pg">O2 Sat:</label><input type="text" name="O2_Sat" id="Vitals_Q5" class="main" value="24"><br>
 				
 				<label for="Sup_O2_pg">Sup O2</label><select name="pregnanacy_test" disabled>
 				<option value=""></option>
 				</select><br>
 
-				<label for="Temp_pg">Temp</label><input type="text" name="Temp" id="Temp_pg" class="main" value="43"><span class="side">2</span><br>
+				<label for="Temp_pg">Temp</label><input type="text" name="Temp" id="Vitals_Q6" class="main" value="43"><span class="side">2</span><br>
 
-				<label for="AVPU_pg">AVPU</label><select name="pregnanacy_test" disabled>
+				<label for="AVPU_pg">AVPU</label><select name="pregnanacy_test" disabled id="Vitals_Q7">
 				<option value="React to voice">React to voice</option>
 				</select><span class="side">1</span><br>
 
-				<label for="GCS_pg">GCS</label><select name="pregnanacy_test" disabled>
+				<label for="GCS_pg">GCS</label><select name="pregnanacy_test" disabled id="Vitals_Q8">
 				<option value="0">0</option>
 				</select><br>
 
@@ -336,7 +361,9 @@
 				<label for="Trauma_pg">Trauma</label><select name="pregnanacy_test" disabled>
 		        <option value=""></option>
 		        </select><br><br>
+
 				<span>Total TEWS</span><span class="lst">4</span><br>	
+
 			</form>
 		</div>
 		<div class="cl4">
@@ -344,24 +371,61 @@
 			<p>Results<p>
 			<form>
 				<input type="checkbox" name="SpO2"><label class="last reded">SpO2 Checked</label><input type="text" name="SpO2"></input><br>
+
 				<input type="checkbox" name="O2" checked="true"><label class="last reded">O2 given</label><br>
+
 				<input type="checkbox" name="ECG" checked="true"><label class="last">Immediate ECG</label><br>
+
 				<input type="checkbox" name="IV"><label class="last">IV</label><br>
+
 				<input type="checkbox" name="Resus"><label class="last">Move to Resus</label><br>
+
 				<input type="checkbox" name="FPG"><label class="last">Finger Prick Glucotest</label><input type="text" name="FPG"></input><br>
+
 				<input type="checkbox" name="Food/drink"><label class="last">Give food or drink</label><br>
+
 				<input type="checkbox" name="Urine_Dipsticks"><label class="last">Urine Dipsticks(+ketones)</label><input type="text" name="FPG"></input><br>
+
 				<input type="checkbox" name="Urine_pregnanacy_test"><label class="last" style="margin-right: -1%;">Urine pregnanacy test</label>
+
 				<select style=""name="pregnanacy_test">
 		        <option value=""></option>
 		        </select><br>
+
 				<input type="checkbox" name="Paracetamol"><label class="last">Paracetamol 1g PO stat</label><br>
+
 				<input type="checkbox" name="blankets"><label class="last">Warm with blankets</label><br>
+
 				<input type="checkbox" name="Finger_prick_Hb"><label class="last">Finger prick Hb</label><input type="text" name="Finger_prick_Hb"></input><br>
-				<input type="checkbox" name="HandOver"><label class="last reded">Hand over to SHCP</label><br>
+
+				<input type="checkbox" name="HandOver"><label class="last reded">Hand over to SHCP</label><br>	
 			</form>
 
+
 		</div>
-	
+		<button onclick="cls()" id="can" class="can">cancel</button> <button onclick="window.location.href ='dummy.html'" id="subt" class="subt">Submit</button>	
+	</div>
+	<button onclick="dis()" id="btn1">show</button>
+	<script type="text/javascript">
+		function dis(){
+		document.getElementById('full').style.display= "block";
+		document.getElementById('btn1').style.display="none";
+	}  
+	   function cls(){
+	   	document.getElementById('date_pg').value="";
+	   	document.getElementById('Time_pg').value="";
+	   	document.getElementById('Vitals_Q1').value="";
+	   	document.getElementById('Vitals_Q2').value="";
+	   	document.getElementById('Vitals_Q3').value="";
+	   	document.getElementById('Vitals_Q4').value="";
+	   	document.getElementById('Vitals_Q5').value="";
+	   	document.getElementById('Vitals_Q6').value="";
+	   	document.getElementById('Vitals_Q7').value="";
+	   	document.getElementById('Vitals_Q8').value="";
+	   	document.getElementById('Vitals_Q9').value="";
+	   }
+
+
+	</script>
 	</body>
-	</html>
+</html>
